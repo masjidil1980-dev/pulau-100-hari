@@ -20,7 +20,7 @@ jobs:
           mkdir -p out
           npx remotion render src/index.jsx Story out/part${{ matrix.part }}.mp4 --frames=$S-$E --gl=angle --concurrency=4 --image-format=jpeg --jpeg-quality=92 --crf=17
       - uses: actions/upload-artifact@v4
-        with: {name: "part${{ matrix.part }}", path: "out/part${{ matrix.part }}.mp4"}
+        with: {name: part${{ matrix.part }}, path: out/part${{ matrix.part }}.mp4}
   join:
     needs: chunk
     runs-on: ubuntu-latest
